@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">NewCharacter</string>
+    <string-array name="AllRace">
+        <item>"Человек"</item>
+        <item>"Эльф"</item>
+        <item>"Полуорк"</item>
+        <item>"Гном"</item>
+        <item>"Полурослик"</item>
+        <item>"Дварф"</item>
+        <item>"Полуэльф"</item>
+        <item>"Тифлинг"</item>
+    </string-array>
+    <string-array name="AllClass">
+        <item>"Бард"</item>
+        <item>"Варвар"</item>
+        <item>"Воин"</item>
+        <item>"Волшебник"</item>
+        <item>"Друид"</item>
+        <item>"Жрец"</item>
+        <item>"Колдун"</item>
+        <item>"Монах"</item>
+        <item>"Паладин"</item>
+        <item>"Плут"</item>
+        <item>"Следопыт"</item>
+        <item>"Чародей"</item>
+    </string-array>
+</resources>

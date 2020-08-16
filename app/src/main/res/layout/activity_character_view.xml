@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CharacterView">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/character_ava" />
+
+    <TextView
+        android:id="@+id/textViewNameCharacterView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Имя персонажа"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewLvl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Lvl :"
+        app:layout_constraintEnd_toStartOf="@+id/textViewActualLvlCharacterView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewActualLvlCharacterView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewClass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Класс :"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <TextView
+        android:id="@+id/textViewRaceView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Раса :"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewClass" />
+
+    <TextView
+        android:id="@+id/textViewClassCharacterView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="текущий класс"
+        app:layout_constraintStart_toEndOf="@+id/textViewClass"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <TextView
+        android:id="@+id/textViewRaceCharacterView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Текущая расса"
+        app:layout_constraintStart_toEndOf="@+id/textViewRaceView"
+        app:layout_constraintTop_toBottomOf="@+id/textViewClassCharacterView" />
+
+    <Button
+        android:id="@+id/buttonClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickCloseCharacterView"
+        android:text="Сохранить и Закрыть"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewExp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Опыт:"
+        app:layout_constraintBottom_toTopOf="@+id/textViewClassCharacterView"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNameCharacterView" />
+
+    <TextView
+        android:id="@+id/textViewExpMin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="0"
+        app:layout_constraintBottom_toTopOf="@+id/textViewClassCharacterView"
+        app:layout_constraintStart_toEndOf="@+id/textViewExp"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNameCharacterView" />
+
+    <TextView
+        android:id="@+id/textViewExp2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="/"
+        app:layout_constraintBottom_toTopOf="@+id/textViewClassCharacterView"
+        app:layout_constraintStart_toEndOf="@+id/textViewExpMin"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNameCharacterView" />
+
+    <TextView
+        android:id="@+id/textViewExpMax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="300"
+        app:layout_constraintBottom_toTopOf="@+id/textViewClassCharacterView"
+        app:layout_constraintStart_toEndOf="@+id/textViewExp2"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNameCharacterView" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButtonExp_plus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:fadeScrollbars="false"
+        app:fabCustomSize="23dp"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toTopOf="@+id/textViewClassCharacterView"
+        app:layout_constraintStart_toEndOf="@+id/editTextExp_Add"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNameCharacterView"
+        android:onClick="onClickAddExp"
+        app:srcCompat="@drawable/exp_plus"
+        app:useCompatPadding="false" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButtonLvl_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:fabCustomSize="24dp"
+        android:layout_margin="10dp"
+        app:fabSize="mini"
+        app:layout_constraintEnd_toStartOf="@+id/textViewLvl"
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="onClickAddLvl"
+        app:srcCompat="@drawable/lvl_plu" />
+
+    <TextView
+        android:id="@+id/textViewAddExp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Добавить опыт:"
+        app:layout_constraintBottom_toTopOf="@+id/textViewClassCharacterView"
+        app:layout_constraintStart_toEndOf="@+id/textViewExpMax"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNameCharacterView" />
+
+    <EditText
+        android:id="@+id/editTextExp_Add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="сколько?"
+        android:inputType="number"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewClassCharacterView"
+        app:layout_constraintStart_toEndOf="@+id/textViewAddExp"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNameCharacterView" />
+</androidx.constraintlayout.widget.ConstraintLayout>
