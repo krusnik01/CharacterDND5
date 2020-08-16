@@ -138,14 +138,15 @@
             android:layout_height="wrap_content"
             android:checked="false"
             android:text="В ручную"
-            android:textSize="15sp"/>
+            android:textSize="15sp" />
 
         <RadioButton
             android:id="@+id/radioButtonSimple"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:checked="false"
             android:text="Простой"
-            android:textSize="15sp"/>
+            android:textSize="15sp" />
 
         <RadioButton
             android:id="@+id/radioButtonPointBuy"
@@ -314,10 +315,11 @@
 
     <ImageButton
         android:id="@+id/imageButtonStrUp"
+
         android:layout_width="44dp"
         android:layout_height="39dp"
         android:adjustViewBounds="true"
-        android:contentDescription="StengthUp"
+        android:contentDescription="textViewStrengthValue"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="@+id/textViewStrengthValue"
         app:layout_constraintEnd_toStartOf="@+id/textViewStrengthValue"
@@ -330,7 +332,7 @@
         android:layout_width="44dp"
         android:layout_height="39dp"
         android:adjustViewBounds="true"
-        android:contentDescription="StengthDown"
+        android:contentDescription="textViewStrengthValue"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="@+id/textViewStrengthValue"
         app:layout_constraintStart_toEndOf="@+id/textViewStrengthValue"
@@ -343,7 +345,7 @@
         android:layout_width="44dp"
         android:layout_height="39dp"
         android:adjustViewBounds="true"
-        android:contentDescription="DexterityUp"
+        android:contentDescription="textViewDexterityValue"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="@+id/textViewDexterityValue"
         app:layout_constraintEnd_toStartOf="@+id/textViewDexterityValue"
@@ -355,7 +357,7 @@
         android:layout_width="44dp"
         android:layout_height="39dp"
         android:adjustViewBounds="true"
-        android:contentDescription="DexterityDown"
+        android:contentDescription="textViewDexterityValue"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="@+id/textViewDexterityValue"
         app:layout_constraintStart_toEndOf="@+id/textViewDexterityValue"
@@ -367,7 +369,7 @@
         android:layout_width="44dp"
         android:layout_height="39dp"
         android:adjustViewBounds="true"
-        android:contentDescription="ConstitutionUp"
+        android:contentDescription="textViewConstitutionValue"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="@+id/textViewConstitutionValue"
         app:layout_constraintEnd_toStartOf="@+id/textViewConstitutionValue"
@@ -379,7 +381,7 @@
         android:layout_width="44dp"
         android:layout_height="39dp"
         android:adjustViewBounds="true"
-        android:contentDescription="ConstitutionDown"
+        android:contentDescription="textViewConstitutionValue"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="@+id/textViewConstitutionValue"
         app:layout_constraintStart_toEndOf="@+id/textViewConstitutionValue"
@@ -387,13 +389,12 @@
         app:layout_constraintVertical_bias="0.375"
         app:srcCompat="@drawable/icon_down" />
 
-
     <ImageButton
         android:id="@+id/imageButtonIntUp"
         android:layout_width="44dp"
         android:layout_height="39dp"
         android:adjustViewBounds="true"
-        android:contentDescription="IntiligenceUp"
+        android:contentDescription="textViewIntelligenceValue"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="@+id/textViewIntelligenceValue"
         app:layout_constraintEnd_toStartOf="@+id/textViewIntelligenceValue"
@@ -405,7 +406,7 @@
         android:layout_width="44dp"
         android:layout_height="39dp"
         android:adjustViewBounds="true"
-        android:contentDescription="IntilligenctDown"
+        android:contentDescription="textViewIntelligenceValue"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="@+id/textViewIntelligenceValue"
         app:layout_constraintStart_toEndOf="@+id/textViewIntelligenceValue"
@@ -495,6 +496,7 @@
         android:text="Свободные очки:"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/textViewCharismaValue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageButtonConDown"
@@ -507,10 +509,22 @@
         android:text="28"
         android:textSize="30sp"
         android:textStyle="bold"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/textViewCharismaValue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageButtonConDown"
         app:layout_constraintTop_toBottomOf="@+id/textViewFreeValueDesc" />
+
+    <Button
+        android:id="@+id/buttonRoll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ролл 4d6"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonStrDown"
+        app:layout_constraintTop_toTopOf="@+id/textViewStrengthValue"
+        android:onClick="onClickGenerateRoll"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
