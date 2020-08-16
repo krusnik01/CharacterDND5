@@ -10,6 +10,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -26,6 +27,8 @@ public class AddCharacterActivity extends AppCompatActivity {
     private RadioButton radioButtonSimple;
     private RadioButton radioButtonPointBuy;
     private RadioButton radioButtonRoll;
+    private ImageButton imageButtonStrUp;
+    private ImageButton imageButtonStrDown;
 
 
     private MainViewModel viewModel;
@@ -38,6 +41,8 @@ public class AddCharacterActivity extends AppCompatActivity {
         editTextName = findViewById(R.id.editTextName);
         spinnerClass = findViewById(R.id.spinnerClass);                                             //находим итемы
         spinnerRace = findViewById(R.id.spinnerRace);
+        imageButtonStrUp = findViewById(R.id.imageButtonStrUp);
+        imageButtonStrDown = findViewById(R.id.imageButtonStrDown);
         viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
         textViewFreeValueDesc = findViewById(R.id.textViewFreeValueDesc);
         textViewFreeVlaue = findViewById(R.id.textViewFreeVlaue);
@@ -85,21 +90,6 @@ public class AddCharacterActivity extends AppCompatActivity {
         textViewFreeVlaue.setVisibility(View.VISIBLE);
     }
 
-    /*
-      public void OnCheckedButtonCustom(View view) {                      //выбор свободного распределения
-          hideFreeValue();
-      }
-  public void OnCheckedButtonSimple(View view) {          //выброр простого распределения
-          hideFreeValue();
-      }
-
-      public void OnCheckedButtonPointBuy(View view) {            // распределение свободных очков
-          showFreeValue();
-      }
-
-      public void OnChekedButtonRoll(View view) {             // распределение ролом
-          hideFreeValue();
-      }*/
     View.OnClickListener radioButtonClickListener = new View.OnClickListener() {  //слушаем выбор кнопок
 
         @Override
@@ -123,4 +113,8 @@ public class AddCharacterActivity extends AppCompatActivity {
 
         }
     };
+
+    public void changesButtonUpDown()  {
+       // imageButtonStrUp.setImageDrawable();
+    }
 }
