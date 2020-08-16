@@ -108,4 +108,408 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <TextView
+        android:id="@+id/textViewGenerateMetod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Метот создания персонажа"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+        app:layout_constraintTop_toBottomOf="@id/textViewClass"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        android:checkedButton="@id/radioButtonPointBuy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewGenerateMetod">
+
+        <RadioButton
+            android:id="@+id/radioButtonCustom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="В ручную"
+            android:textSize="15sp"/>
+
+        <RadioButton
+            android:id="@+id/radioButtonSimple"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Простой"
+            android:textSize="15sp"/>
+
+        <RadioButton
+            android:id="@+id/radioButtonPointBuy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Распределение"
+            android:textSize="15sp" />
+
+        <RadioButton
+            android:id="@+id/radioButtonRoll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ролл"
+            android:textSize="15sp"/>
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textViewStrength"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Strength"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+
+    <TextView
+        android:id="@+id/textViewDexterity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:text="Dexterity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewStrength" />
+
+
+    <TextView
+        android:id="@+id/textViewConstitution"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="Constitution"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDexterity" />
+
+    <TextView
+        android:id="@+id/textViewIntelligence"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="Intilligence"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewConstitution" />
+
+    <TextView
+        android:id="@+id/textViewWisdom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="Wisdom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewIntelligence" />
+
+    <TextView
+        android:id="@+id/textViewCharisma"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="Charisma"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewWisdom" />
+
+    <TextView
+        android:id="@+id/textViewStrengthValue"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:text="8"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewStrength"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewStrength" />
+
+    <TextView
+        android:id="@+id/textViewDexterityValue"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:text="8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewStrengthValue" />
+
+    <TextView
+        android:id="@+id/textViewConstitutionValue"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDexterityValue" />
+
+    <TextView
+        android:id="@+id/textViewIntelligenceValue"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewConstitutionValue" />
+
+    <TextView
+        android:id="@+id/textViewWisdomValue"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewIntelligenceValue" />
+
+    <TextView
+        android:id="@+id/textViewCharismaValue"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewWisdomValue" />
+
+    <ImageButton
+        android:id="@+id/imageButtonStrUp"
+        android:layout_width="44dp"
+        android:layout_height="39dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="StengthUp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewStrengthValue"
+        app:layout_constraintEnd_toStartOf="@+id/textViewStrengthValue"
+        app:layout_constraintTop_toTopOf="@+id/textViewStrengthValue"
+        app:layout_constraintVertical_bias="0.375"
+        app:srcCompat="@drawable/icon_up" />
+    <ImageButton
+        android:id="@+id/imageButtonStrDown"
+        android:layout_width="44dp"
+        android:layout_height="39dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="StengthDown"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewStrengthValue"
+        app:layout_constraintStart_toEndOf="@+id/textViewStrengthValue"
+        app:layout_constraintTop_toTopOf="@+id/textViewStrengthValue"
+        app:layout_constraintVertical_bias="0.375"
+        app:srcCompat="@drawable/icon_down" />
+
+    <ImageButton
+        android:id="@+id/imageButtonDexUp"
+        android:layout_width="44dp"
+        android:layout_height="39dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="DexterityUp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewDexterityValue"
+        app:layout_constraintEnd_toStartOf="@+id/textViewDexterityValue"
+        app:layout_constraintTop_toTopOf="@+id/textViewDexterityValue"
+        app:layout_constraintVertical_bias="0.375"
+        app:srcCompat="@drawable/icon_up" />
+    <ImageButton
+        android:id="@+id/imageButtonDexDown"
+        android:layout_width="44dp"
+        android:layout_height="39dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="DexterityDown"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewDexterityValue"
+        app:layout_constraintStart_toEndOf="@+id/textViewDexterityValue"
+        app:layout_constraintTop_toTopOf="@+id/textViewDexterityValue"
+        app:layout_constraintVertical_bias="0.375"
+        app:srcCompat="@drawable/icon_down" />
+    <ImageButton
+        android:id="@+id/imageButtonConUp"
+        android:layout_width="44dp"
+        android:layout_height="39dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="ConstitutionUp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewConstitutionValue"
+        app:layout_constraintEnd_toStartOf="@+id/textViewConstitutionValue"
+        app:layout_constraintTop_toTopOf="@+id/textViewConstitutionValue"
+        app:layout_constraintVertical_bias="0.375"
+        app:srcCompat="@drawable/icon_up" />
+    <ImageButton
+        android:id="@+id/imageButtonConDown"
+        android:layout_width="44dp"
+        android:layout_height="39dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="ConstitutionDown"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewConstitutionValue"
+        app:layout_constraintStart_toEndOf="@+id/textViewConstitutionValue"
+        app:layout_constraintTop_toTopOf="@+id/textViewConstitutionValue"
+        app:layout_constraintVertical_bias="0.375"
+        app:srcCompat="@drawable/icon_down" />
+
+
+    <ImageButton
+        android:id="@+id/imageButtonIntUp"
+        android:layout_width="44dp"
+        android:layout_height="39dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="IntiligenceUp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewIntelligenceValue"
+        app:layout_constraintEnd_toStartOf="@+id/textViewIntelligenceValue"
+        app:layout_constraintTop_toTopOf="@+id/textViewIntelligenceValue"
+        app:layout_constraintVertical_bias="0.375"
+        app:srcCompat="@drawable/icon_up" />
+    <ImageButton
+        android:id="@+id/imageButtonIntDown"
+        android:layout_width="44dp"
+        android:layout_height="39dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="IntilligenctDown"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewIntelligenceValue"
+        app:layout_constraintStart_toEndOf="@+id/textViewIntelligenceValue"
+        app:layout_constraintTop_toTopOf="@+id/textViewIntelligenceValue"
+        app:layout_constraintVertical_bias="0.375"
+        app:srcCompat="@drawable/icon_down" />
+
+
+    <ImageButton
+        android:id="@+id/imageButtonWisUp"
+        android:layout_width="44dp"
+        android:layout_height="39dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="WisdomUp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewWisdomValue"
+        app:layout_constraintEnd_toStartOf="@+id/textViewWisdomValue"
+        app:layout_constraintTop_toTopOf="@+id/textViewWisdomValue"
+        app:layout_constraintVertical_bias="0.375"
+        app:srcCompat="@drawable/icon_up" />
+    <ImageButton
+        android:id="@+id/imageButtonWisDown"
+        android:layout_width="44dp"
+        android:layout_height="39dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="WisdomDown"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewWisdomValue"
+        app:layout_constraintStart_toEndOf="@+id/textViewWisdomValue"
+        app:layout_constraintTop_toTopOf="@+id/textViewWisdomValue"
+        app:layout_constraintVertical_bias="0.375"
+        app:srcCompat="@drawable/icon_down" />
+
+    <ImageButton
+        android:id="@+id/imageButtonCharUp"
+        android:layout_width="44dp"
+        android:layout_height="39dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="CharismaUp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewCharismaValue"
+        app:layout_constraintEnd_toStartOf="@+id/textViewCharismaValue"
+        app:layout_constraintTop_toTopOf="@+id/textViewCharismaValue"
+        app:layout_constraintVertical_bias="0.375"
+        app:srcCompat="@drawable/icon_up" />
+    <ImageButton
+        android:id="@+id/imageButtonCharismaDown"
+        android:layout_width="44dp"
+        android:layout_height="39dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="CharismaDown"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewCharismaValue"
+        app:layout_constraintStart_toEndOf="@+id/textViewCharismaValue"
+        app:layout_constraintTop_toTopOf="@+id/textViewCharismaValue"
+        app:layout_constraintVertical_bias="0.375"
+        app:srcCompat="@drawable/icon_down" />
+
+    <TextView
+        android:id="@+id/textViewBonus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Рассовый бонус:"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCharismaValue" />
+
+    <TextView
+        android:id="@+id/textViewRacieBonus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="+100500 ко всему"
+        app:layout_constraintBottom_toTopOf="@+id/buttonCreateCharacter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBonus" />
+
+    <TextView
+        android:id="@+id/textViewFreeValueDesc"
+        android:layout_width="113dp"
+        android:layout_height="59dp"
+        android:text="Свободные очки:"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewCharismaValue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonConDown"
+        app:layout_constraintTop_toTopOf="@+id/textViewStrengthValue" />
+
+    <TextView
+        android:id="@+id/textViewFreeVlaue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="28"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewCharismaValue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonConDown"
+        app:layout_constraintTop_toBottomOf="@+id/textViewFreeValueDesc" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
