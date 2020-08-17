@@ -6,22 +6,23 @@ import androidx.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.Spinner;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.Random;
 
 public class AddCharacterActivity extends AppCompatActivity {
 
     private EditText editTextName;                                                                     //объявляем итемы с активности
     private Spinner spinnerRace;
     private Spinner spinnerClass;
+    private Spinner spinnerIdeology;
     private TextView textViewFreeValueDesc;
     private TextView textViewFreeValue;
     private TextView textViewStrengthValue;
@@ -30,6 +31,7 @@ public class AddCharacterActivity extends AppCompatActivity {
     private TextView textViewIntelligenceValue;
     private TextView textViewWisdomValue;
     private TextView textViewCharismaValue;
+    private TextView textViewRacieBonus;
 
     private RadioButton radioButtonCustom;
     private RadioButton radioButtonSimple;
@@ -69,7 +71,6 @@ public class AddCharacterActivity extends AppCompatActivity {
 
     private MainViewModel viewModel;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,6 +79,8 @@ public class AddCharacterActivity extends AppCompatActivity {
         searchItem();
         getAttributes();
         changesButtonPlus();
+        setDefaultPointBuy();
+        idButton =R.id.radioButtonCustom;
     }
 
     public void onClickCreateCharacter(View view) {
@@ -97,6 +100,18 @@ public class AddCharacterActivity extends AppCompatActivity {
             Toast.makeText(this, "Введите имя", Toast.LENGTH_SHORT).show();
         }
     }
+
+    OnItemSelectedListener raceCharacterSelected = new OnItemSelectedListener() {
+        @Override
+        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+            String item = (String)parent.getItemAtPosition(position);
+            textViewRacieBonus.setText(item);
+        }
+
+        @Override
+        public void onNothingSelected(AdapterView<?> parent) {        }
+    };
 
     private boolean isFilled(String name) {                                  //проверяем не пустое ли имя
         return !name.isEmpty();
@@ -174,6 +189,7 @@ public class AddCharacterActivity extends AppCompatActivity {
         editTextName = findViewById(R.id.editTextName);
         spinnerClass = findViewById(R.id.spinnerClass);                                             //находим итемы
         spinnerRace = findViewById(R.id.spinnerRace);
+        spinnerIdeology = findViewById(R.id.spinnerIdeology);
 
         imageButtonStrUp = findViewById(R.id.imageButtonStrUp);
         imageButtonStrDown = findViewById(R.id.imageButtonStrDown);
@@ -201,6 +217,8 @@ public class AddCharacterActivity extends AppCompatActivity {
         textViewIntelligenceValue = findViewById(R.id.textViewIntelligenceValue);
         textViewWisdomValue = findViewById(R.id.textViewWisdomValue);
         textViewCharismaValue = findViewById(R.id.textViewCharismaValue);
+        textViewRacieBonus = findViewById(R.id.textViewRacieBonus);
+        spinnerRace.setOnItemSelectedListener(raceCharacterSelected);
 
         radioButtonCustom.setOnClickListener(radioButtonClickListener);
         radioButtonSimple.setOnClickListener(radioButtonClickListener);
@@ -374,11 +392,54 @@ public class AddCharacterActivity extends AppCompatActivity {
     }
 
     public void changeAttributes(ImageButton imageButtonClick, int idImageButton) {                // логика сортировки
-        String sosed = imageButtonClick.getContentDescription().toString();
-        //String idstring = textViewStrengthValue;
-       // Toast.makeText(this, ""+idstring, Toast.LENGTH_SHORT).show();
+                switch (idImageButton) {
+            case R.id.imageButtonStrUp:break;
 
+            case R.id.imageButtonStrDown:
+                moveValueDown(textViewStrengthValue, textViewDexterityValue);
+                break;
 
+            case R.id.imageButtonDexUp:
+                moveValueDown(textViewDexterityValue,textViewStrengthValue);
+                break;
+
+            case R.id.imageButtonDexDown:
+                moveValueDown(textViewDexterityValue,textViewConstitutionValue);
+                break;
+
+            case R.id.imageButtonConUp:
+                moveValueDown(textViewConstitutionValue,textViewDexterityValue);
+                break;
+            case R.id.imageButtonConDown:
+                moveValueDown(textViewConstitutionValue,textViewIntelligenceValue);
+                break;
+
+            case R.id.imageButtonIntUp:
+                moveValueDown(textViewIntelligenceValue,textViewConstitutionValue);
+                break;
+            case R.id.imageButtonIntDown:
+                moveValueDown(textViewIntelligenceValue, textViewWisdomValue);
+                break;
+
+            case R.id.imageButtonWisUp:
+                moveValueDown(textViewWisdomValue,textViewIntelligenceValue );
+                break;
+            case R.id.imageButtonWisDown:
+                moveValueDown(textViewWisdomValue,textViewCharismaValue );
+                break;
+
+            case R.id.imageButtonCharUp:
+                moveValueDown(textViewCharismaValue,textViewWisdomValue );
+                break;
+            case R.id.imageButtonCharDown: break;
+        }
+
+        }
+    public void moveValueDown(TextView movedValueClick, TextView movedValue){
+        String newValue;
+        newValue = movedValue.getText().toString();
+        movedValue.setText(movedValueClick.getText().toString());
+        movedValueClick.setText(newValue);
     }
 
     public void setDefaultSimple() {
@@ -393,5 +454,10 @@ public class AddCharacterActivity extends AppCompatActivity {
 
     public void onClickGenerateRoll(View view) {
         setDefaultRandom();
+    }
+
+
+    public void setRaceBonus() {
+
     }
 }

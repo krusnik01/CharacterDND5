@@ -24,4 +24,15 @@
         <item>"Следопыт"</item>
         <item>"Чародей"</item>
     </string-array>
+    <string-array name="Ideology">
+        <item>"Законопослушный добрый"</item>
+        <item>"добрый"</item>
+        <item>"Хаотично-добрый"</item>
+        <item>"Законопослушно нейтральный"</item>
+        <item>"Нейтральный"</item>
+        <item>"Хаотично-нейтральный"</item>
+        <item>"Законопослушный злой"</item>
+        <item>"Злой"</item>
+        <item>"Хаотично-злой"</item>
+    </string-array>
 </resources>
