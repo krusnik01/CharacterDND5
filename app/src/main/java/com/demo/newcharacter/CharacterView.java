@@ -12,8 +12,6 @@ import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import java.util.ArrayList;
-
 public class CharacterView extends AppCompatActivity {
 
     private TextView textViewName;
@@ -30,7 +28,7 @@ public class CharacterView extends AppCompatActivity {
     private int maxExp;
     private int minExp;
     public Character character;
-    private MainViewModel viewModel;
+    private MainViewModelCharacter viewModel;
 
 
     @Override
@@ -47,7 +45,7 @@ public class CharacterView extends AppCompatActivity {
         editTextExp_Add = findViewById(R.id.editTextExp_Add);
         buttonOnClickAddLvl = findViewById(R.id.floatingActionButtonLvl_add);
         buttonOnClickAddExp = findViewById(R.id.floatingActionButtonExp_plus);
-        viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
+        viewModel = ViewModelProviders.of(this).get(MainViewModelCharacter.class);
         Intent intent = getIntent();
         character = (Character) intent.getSerializableExtra("character");         //получаем персонажа
         SetCharacter(character);                                                                     //устанавливаем поля

@@ -6,22 +6,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.ContentValues;
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Currency;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -29,14 +22,14 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerViewCharacter;
     private final ArrayList<Character> characters = new ArrayList<>();                            // массив персонажей который попадает в ресайклвью
     public CharacterAdapter characterAdapter;
-    private MainViewModel viewModel;
+    private MainViewModelCharacter viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ActionBar actionBar = getSupportActionBar();
-        viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
+        viewModel = ViewModelProviders.of(this).get(MainViewModelCharacter.class);
         if (actionBar != null) {
             actionBar.hide();
         }

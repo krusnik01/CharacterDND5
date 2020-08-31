@@ -19,9 +19,13 @@ public class Character implements Serializable {                            //н
     private int lvlCharacter;        //уровень персонажа
     private int minExp;             //текущий опыт
     private int maxExp;             //опыт до след уровня
+    //private int speed;
+    //private String size;
+    private Special special;
 
 
-    public Character(int idCharacter, String nameCharacter, String imgCharacter, String classCharacter, String raceCharacter, int lvlCharacter, int minExp, int maxExp) {
+
+    public Character(int idCharacter, String nameCharacter, String imgCharacter, String classCharacter, String raceCharacter, int lvlCharacter, int minExp, int maxExp, Special special) {
         this.idCharacter = idCharacter;
         this.nameCharacter = nameCharacter;
         this.imgCharacter = imgCharacter;
@@ -30,10 +34,11 @@ public class Character implements Serializable {                            //н
         this.lvlCharacter = lvlCharacter;
         this.minExp = minExp;
         this.maxExp = maxExp;
+        this.special = special;
     }
 
     @Ignore
-    public Character(String nameCharacter, String imgCharacter, String classCharacter, String raceCharacter, int lvlCharacter, int minExp, int maxEx) {
+    public Character(String nameCharacter, String imgCharacter, String classCharacter, String raceCharacter, int lvlCharacter, int minExp, int maxEx, Special special) {
         this.nameCharacter = nameCharacter;
         this.imgCharacter = imgCharacter;
         this.classCharacter = classCharacter;
@@ -41,8 +46,16 @@ public class Character implements Serializable {                            //н
         this.lvlCharacter = lvlCharacter;
         this.minExp = minExp;
         this.maxExp = maxEx;
+        this.special = special;
     }
 
+    public void setSpecial(Special special) {
+        this.special = special;
+    }
+
+    public Special getSpecial() {
+        return special;
+    }
 
     public String getNameCharacter() {
         return nameCharacter;

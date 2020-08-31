@@ -65,17 +65,18 @@ public class AddCharacterActivity extends AppCompatActivity {
     private int intValue;
     private int wisValue;
     private int charValue;
+    private Special special;
 
     private int freeValue;
     private int minValue = 5;
 
-    private MainViewModel viewModel;
+    private MainViewModelCharacter viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_character);
-        viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
+        viewModel = ViewModelProviders.of(this).get(MainViewModelCharacter.class);
         searchItem();
         getAttributes();
         changesButtonPlus();
@@ -91,8 +92,9 @@ public class AddCharacterActivity extends AppCompatActivity {
         int lvlCharacter = 1;
         int minExp = 0;
         int maxExp = 300;
+        special =  new Special(strValue,dexValue, conValue,intValue,wisValue,charValue);
         if (isFilled(nameCharacter)) {
-            Character character = new Character(nameCharacter, imgCharacter, classCharacter, raceCharacter, lvlCharacter, minExp, maxExp);
+            Character character = new Character(nameCharacter, imgCharacter, classCharacter, raceCharacter, lvlCharacter, minExp, maxExp, special);
             viewModel.insertCharacter(character);
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
